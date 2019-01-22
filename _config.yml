@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   The only no-show socks you'll ever need. Specter No-Shows
   are built to last and designed to be minimal, comfortable,
   and low-profile without slipping.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/specter" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
