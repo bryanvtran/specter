@@ -23,6 +23,11 @@
 
     @media (max-width: $mobile-width) {
         display: block;
+
+        .container-grid__col {
+            margin-bottom: $base-padding;
+            padding-right: 0;
+        }
     }
 }
 
