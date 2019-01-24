@@ -1,0 +1,21 @@
+// colors
+$black: #111;
+$black-light: lighten($black, 30%);
+$white: #fff;
+
+// typography
+@import url('https://fonts.googleapis.com/css?family=Krub:300,400,500');
+$font-family: 'Krub', sans-serif;
+$regular: 300;
+$semi-bold: 400;
+$bold: 500;
+
+// spacing
+$spacing: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+$base-padding: $spacing;
+
+// screen sizes
+$container-width: 900px;
+$mobile-width: 768px;

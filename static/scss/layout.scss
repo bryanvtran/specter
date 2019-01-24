@@ -1,0 +1,36 @@
+.container {
+    max-width: $container-width;
+    padding: $base-padding;
+    margin: 0 auto;
+}
+
+.container-grid {
+    display: flex;
+    align-items: center;
+
+    .container-grid__col {
+        flex: 1;
+        padding-right: $base-padding;
+
+        &.container-grid__col--2 {
+            flex: 2;
+        }
+        
+        &:last-of-type {
+            padding-right: 0;
+        }
+    }
+
+    @media (max-width: $mobile-width) {
+        display: block;
+    }
+}
+
+footer {
+    text-align: center;
+    color: $black-light;
+
+    p {
+        margin: 0;
+    }
+}
