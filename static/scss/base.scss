@@ -21,3 +21,40 @@ p {
 img {
     width: 100%;
 }
+
+.btn {
+    border: 1px solid $black;
+    padding: $spacing-sm $base-padding;
+    color: $white;
+    text-decoration: none;
+    background: $black;
+    transition: all 0.2s ease 0s;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background: $black-medium;
+        border-color: $black-medium;
+    }
+
+    &.btn--arrow {
+        &:after {
+            content: ' >';
+        }
+    } 
+}
+
+.input {
+    border: 1px solid black;
+    padding: $spacing-sm;
+
+    &:focus {
+        outline: none;
+        border-color: $black-medium;
+    }
+}

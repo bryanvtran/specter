@@ -1,5 +1,6 @@
 // colors
 $black: #111;
+$black-medium: lighten($black, 15%);
 $black-light: lighten($black, 30%);
 $white: #fff;
 
@@ -11,6 +12,7 @@ $semi-bold: 400;
 $bold: 500;
 
 // spacing
+$spacing-sm: 12px;
 $spacing: 24px;
 $spacing-lg: 32px;
 $spacing-xl: 48px;
