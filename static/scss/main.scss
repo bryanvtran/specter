@@ -48,8 +48,6 @@
         h2 {
             font-size: 1.8em;
         }
-        p {
-        }
     }
 
     @media (max-width: $mobile-width) {
@@ -76,6 +74,10 @@
     .centered-content__body {
         margin-bottom: 24px;
     }
+
+    &.centered-content--title-only {
+        margin-bottom: 60px;
+    }
 }
 
 .email-grab {
@@ -94,7 +96,7 @@
 .input-form {
     margin-bottom: $spacing-xl;
     .input {
-        width: 350px;
+        width: 380px;
         max-width: 100%;
     }
 
@@ -108,4 +110,8 @@
             width: 100%;
         }
     }
+}
+
+.carousel {
+    margin-bottom: 80px;
 }
