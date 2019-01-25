@@ -1,9 +1,23 @@
 document.addEventListener('DOMContentLoaded', function(){
     // mailchimp signup form
-    const form = document.querySelector('#mc-embedded-subscribe-form');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        console.log('form submitted');
+    const submitBtn = document.querySelector('#mc-embedded-subscribe');
+    submitBtn.addEventListener('click', function(e) {
+        const required = document.querySelector('#mce-EMAIL');
+        if (required.value && !required.classList.contains('mce_inline_error')) {
+
+        }
+        else {
+            // focus on element
+            required.focus();
+
+            // add error to shake input
+            required.classList.add('shake');
+
+            // remove the class after the animation completes
+            setTimeout(function() {
+                required.classList.remove('shake');
+            }, 300);
+        }
     });
 
     // scroll
@@ -19,12 +33,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 const hash = this.hash;
 
                 // use scroll into view
-                document.querySelector(hash).scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start',
-                    inline: 'nearest'
-                    
-                });
+                document.querySelector(hash).scrollIntoView({
+                    behavior: 'smooth' 
+                })
 
                 // focus on input
                 document.querySelector('#mce-EMAIL').focus();
