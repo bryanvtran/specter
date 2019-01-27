@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){
     // mailchimp signup form
-    const submitBtn = document.querySelector('#mc-embedded-subscribe');
-    submitBtn.addEventListener('click', function(e) {
-        const required = document.querySelector('#mce-EMAIL');
-        if (required.value && !required.classList.contains('mce_inline_error')) {
+    const emailForm = document.querySelector('#mc-embedded-subscribe-form');
+    const required = document.querySelector('#mce-EMAIL');
 
+    emailForm.addEventListener('submit', function(e) {
+        if (required.value && !required.classList.contains('mce_inline_error')) {
+            // we good
         }
         else {
             // focus on element
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 required.classList.remove('shake');
             }, 300);
         }
+        return true;
     });
 
     // scroll
