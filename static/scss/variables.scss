@@ -1,16 +1,16 @@
 // colors
-$black: #111;
+$black: #181818;
 $black-medium: lighten($black, 15%);
 $black-light: lighten($black, 30%);
 $white: #fff;
 $red: #bb0000;
 
 // typography
-@import url('https://fonts.googleapis.com/css?family=Krub:300,400,500');
-$font-family: 'Krub', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+$font-family: 'Source Sans Pro', sans-serif;
+$base-font-size: 16px;
 $regular: 300;
-$semi-bold: 400;
-$bold: 500;
+$bold: 400;
 
 // spacing
 $spacing-sm: 12px;
@@ -19,6 +19,9 @@ $spacing-lg: 32px;
 $spacing-xl: 48px;
 $base-padding: $spacing;
 
+$margin-bottom: 150px;
+$margin-bottom-mobile: 80px;
+
 // screen sizes
-$container-width: 920px;
+$container-width: 1080px;
 $mobile-width: 768px;

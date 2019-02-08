@@ -2,6 +2,44 @@
     max-width: $container-width;
     padding: $base-padding;
     margin: 0 auto;
+
+    &.container--extra-pad {
+        padding: 180px $base-padding;
+
+        @media (max-width: 1500px) {
+            padding: 120px $base-padding;
+        }
+        @media (max-width: 1140px) {
+            padding: 80px $base-padding;
+        }
+        @media (max-width: $mobile-width) {
+            padding: $base-padding;
+
+            &.content {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.container--black-left {
+    position: relative;
+    color: $white;
+    
+    &:before {
+        content: "";
+        position: absolute;
+        width: 65%;
+        height: 100%;
+        background: $black;
+        z-index: -1;
+    }
+
+    @media (max-width: $mobile-width) {
+        &:before {
+            width: 100%;
+        }
+    }
 }
 
 .container-grid {

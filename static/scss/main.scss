@@ -1,26 +1,32 @@
 .landing-header {
     padding: 25vh $base-padding;
     text-align: center;
+    background: $black;
+    color: $white;
+    max-width: inherit;
+    margin-bottom: $margin-bottom;
 
     .landing-header__logo {
-        width: 100px;
+        width: 120px;
         margin-bottom: $spacing-xl;
     }
 
     .landing-header__heading{
         margin: 0 0 $spacing;
-        font-size: 2.5em;
+        font-size: 3em;
+        font-weight: $bold;
     }
 
     .landing-header__subheading {
-        font-weight: $semi-bold;
+        font-weight: $regular;
         margin: 0;
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
 
     @media (max-width: $mobile-width) {
         padding-top: 100px;
         padding-bottom: 100px;
+        margin-bottom: $margin-bottom-mobile;
 
         .landing-header__logo {
             width: 80px
@@ -37,20 +43,36 @@
 }
 
 .content {
-    margin-bottom: 80px;
+    margin-bottom: $margin-bottom;
 
     .content__image {
         padding-right: 24px;
+
+        &.content__image--right {
+            padding-left: 24px;
+            padding-right: 0;
+        }
     }
 
     .content__text {
         padding-left: 24px;
+
+        &.context__text--left {
+            padding-right: 24px;
+            padding-left: 0;
+        }
+
         h2 {
-            font-size: 1.8em;
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.3em;
         }
     }
 
     @media (max-width: $mobile-width) {
+        margin-bottom: $margin-bottom-mobile; 
+
         .content__image {
             padding-right: 0;
         }
@@ -62,34 +84,47 @@
 }
 
 .centered-content {
-    margin-bottom: 80px;
+    margin-bottom: $margin-bottom;
     text-align: center;
-    max-width: 500px;
+    max-width: 650px;
 
     .centered-content__title {
-        font-size: 1.5em;
-        margin-bottom: 24px;
+        font-size: 2em;
+        margin-bottom: 30px;
     }
 
     .centered-content__body {
-        margin-bottom: 24px;
+        font-size: 1.3em;
+        margin-bottom: 30px;
     }
 
     &.centered-content--title-only {
-        margin-bottom: 60px;
+        margin-bottom: 150px;
+
+        @media (max-width: $mobile-width) {
+            margin-bottom: $margin-bottom-mobile; 
+        }
     }
+
+
 }
 
 .email-grab {
     text-align: center;
+    margin-bottom: $margin-bottom;
 
     .email-grab__subtitle {
-        font-size: 1.2em;
-        margin-bottom: $spacing-lg;
+        font-size: 1.5em;
+        font-weight: $bold;
+        margin-bottom: $spacing-xl;
     }
 
     .email-grab__cta {
-        font-size: 2em;
+        font-size: 2.5em;
+    }
+
+    @media (max-width: $mobile-width) {
+        margin-bottom: $margin-bottom-mobile; 
     }
 }
 
@@ -98,6 +133,7 @@
     .input {
         width: 380px;
         max-width: 100%;
+        font-weight: $regular;
     }
 
     @media (max-width: $mobile-width) {
@@ -113,7 +149,10 @@
 }
 
 .carousel {
-    margin-bottom: 80px;
+    margin-bottom: $margin-bottom;
+    @media (max-width: $mobile-width) {
+        margin-bottom: $margin-bottom-mobile;
+    }
 }
 
 .shake {
@@ -133,4 +172,25 @@
 
 .mce_inline_error {
     border-color: $red !important;
+}
+
+.image-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    
+    img {
+        align-self: center;
+    }
+
+    @media (max-width: $mobile-width) {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: block;
+        margin-bottom: $margin-bottom-mobile;
+    }
 }
