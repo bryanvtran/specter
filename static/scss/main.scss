@@ -150,8 +150,23 @@
 
 .carousel {
     margin-bottom: $margin-bottom;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
     @media (max-width: $mobile-width) {
         margin-bottom: $margin-bottom-mobile;
+    }
+
+    .carousel__image {
+        width: 30%;
+        align-self: center;
+        margin-right: $spacing-sm;
+        margin-left: $spacing-sm;
+
+        @media (max-width: $mobile-width) {
+            width: 60%;
+        }
     }
 }
 
