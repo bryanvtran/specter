@@ -1,2 +1,5 @@
 # specter
-Official website for spectersocks.com
+Official site for Specter Socks
+
+https://www.spectersocks.com/
+
