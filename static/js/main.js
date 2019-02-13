@@ -62,7 +62,16 @@ document.addEventListener('DOMContentLoaded', function(){
             e.target.classList.add('center');
             
             // shift content over
-            carouselWrapper.style.transform = `translateX(${-(i-1)*33.333333}%)`
+            if (window.innerWidth < 768) {
+                carouselWrapper.style.transform = `translateX(${-(i-1)*60-40}%)`
+            }
+            else if (window.innerWidth < 1080) {
+                carouselWrapper.style.transform = `translateX(${-(i-1)*50-25}%)`
+            }
+            else {
+                carouselWrapper.style.transform = `translateX(${-(i-1)*33.33333}%)`
+            }
+            
         });
     });
 });

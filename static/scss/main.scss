@@ -106,7 +106,9 @@
         }
     }
 
-
+    @media (max-width: $mobile-width) {
+        margin-bottom: $margin-bottom-mobile; 
+    }
 }
 
 .email-grab {
@@ -152,6 +154,8 @@
     margin-bottom: $margin-bottom;
     width: 100%;
     overflow: hidden;
+    padding-top: 24px;
+    padding-bottom: 24px;
 
     @media (max-width: $mobile-width) {
         margin-bottom: $margin-bottom-mobile;
@@ -169,6 +173,14 @@
         -moz-transition: .5s ease-in-out;
         -o-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
+
+        @media (max-width: $container-width) {
+            transform: translateX(-25%);
+        }
+
+        @media (max-width: $mobile-width) {
+            transform: translateX(-40%);
+        }
     }
 
     .carousel__image {
@@ -183,6 +195,15 @@
         -moz-transition: .5s ease-in-out;
         -o-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
+
+        @media (max-width: $container-width) {
+            flex-basis: 50%;
+            margin: 0;
+        }
+
+        @media (max-width: $mobile-width) {
+            flex-basis: 60%;
+        }
 
 
         &:after {
@@ -206,11 +227,6 @@
             &:after {
                 opacity: 0;
             }
-        }
-
-
-        @media (max-width: $mobile-width) {
-            width: 60%;
         }
     }
 }
