@@ -48,4 +48,21 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     })
 
+    const carouselWrapper = document.querySelector('.carousel__wrapper');
+    const images = document.querySelectorAll('.carousel__image');
+
+    images.forEach(function(image, i) {
+        image.addEventListener('click', function(e) {
+            console.log('clicked');
+            // remove current center 
+            const curImage = document.querySelector('.center');
+            curImage.classList.remove('center');
+
+            // make this one the new center
+            e.target.classList.add('center');
+            
+            // shift content over
+            carouselWrapper.style.transform = `translateX(${-(i-1)*33.333333}%)`
+        });
+    });
 });
