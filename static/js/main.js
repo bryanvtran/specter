@@ -54,91 +54,68 @@ document.addEventListener('DOMContentLoaded', function(){
 
     images.forEach(function(image, i) {
         image.addEventListener('click', function(e) {
-            console.log('clicked');
-            // remove current center 
-            const curImage = document.querySelector('.center');
-            curImage.classList.remove('center');
-
-            // make this one the new center
-            e.target.classList.add('center');
-            
-            // shift content over
-            if (window.innerWidth < 768) {
-                carouselWrapper.style.transform = `translateX(${-(i-1)*60-40}%)`
-            }
-            else if (window.innerWidth < 1080) {
-                carouselWrapper.style.transform = `translateX(${-(i-1)*50-25}%)`
-            }
-            else {
-                carouselWrapper.style.transform = `translateX(${-(i-1)*33.33333}%)`
-            }
+            rotateImage(e.target, i);
         });
     });
+
+    function rotateImage(newImage, i = -1) {
+        // remove current center 
+        const curImage = document.querySelector('.center');
+        curImage.classList.remove('center');
+
+        // make this one the new center
+        newImage.classList.add('center');
+
+        if (i === -1) {
+            i = 0;
+            let child = newImage
+            while ((child = child.previousElementSibling) !== null)  {
+                i++;
+            }
+        }
+
+        // shift content over
+        if (window.innerWidth <= 768) {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*60-40}%)`
+        }
+        else if (window.innerWidth <= 1080) {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*50-25}%)`
+        }
+        else {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*33.33333}%)`
+            }
+    }
 
     function nextElement(element) {
         if (element.nextElementSibling) {
             return element.nextElementSibling;
         }
-        return carouselWrapper.firstElementChild;
+        return null;
     }
 
     function prevElement(element) {
         if (element.previousElementSibling) {
             return element.previousElementSibling;
         }
-        return carouselWrapper.lastElementChild;
+        return null;
     }
 
     function nextImage() {
         const curImage = document.querySelector('.center');
-        curImage.classList.remove('center');
-
-        // get next element and make that the center
         const nextImage = nextElement(curImage);
-        nextImage.classList.add('center');
-
-        let i = 0;
-        let child = nextImage
-        while ((child = child.previousElementSibling) !== null)  {
-            i++;
+        if (!nextImage) {
+            return;
         }
-
-        // shift content over
-        if (window.innerWidth < 768) {
-            carouselWrapper.style.transform = `translateX(${-(i-1)*60-40}%)`
-        }
-        else if (window.innerWidth < 1080) {
-            carouselWrapper.style.transform = `translateX(${-(i-1)*50-25}%)`
-        }
-        else {
-            carouselWrapper.style.transform = `translateX(${-(i-1)*33.33333}%)`
-        }
+        rotateImage(nextImage);
     }
 
     function prevImage() {
         const curImage = document.querySelector('.center');
-        curImage.classList.remove('center');
-
-        // get next element and make that the center
         const prevImage = prevElement(curImage);
-        prevImage.classList.add('center');
-
-        let i = 0;
-        let child = prevImage
-        while ((child = child.previousElementSibling) !== null)  {
-            i++;
+        if (!prevImage) {
+            return;
         }
-
-        // shift content over
-        if (window.innerWidth < 768) {
-            carouselWrapper.style.transform = `translateX(${-(i-1)*60-40}%)`
-        }
-        else if (window.innerWidth < 1080) {
-            carouselWrapper.style.transform = `translateX(${-(i-1)*50-25}%)`
-        }
-        else {
-            carouselWrapper.style.transform = `translateX(${-(i-1)*33.33333}%)`
-        }
+        rotateImage(prevImage);
     }
 
     carousel.addEventListener("touchstart", startTouch, false);
@@ -177,11 +154,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 // swiped right
                 prevImage();
             }
+            e.preventDefault();
         }
 
         initialX = null;
         initialY = null;
-        
-        e.preventDefault();
     };
 });
