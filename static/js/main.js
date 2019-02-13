@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     })
 
+    const carousel = document.querySelector('.carousel')
     const carouselWrapper = document.querySelector('.carousel__wrapper');
     const images = document.querySelectorAll('.carousel__image');
 
@@ -71,7 +72,116 @@ document.addEventListener('DOMContentLoaded', function(){
             else {
                 carouselWrapper.style.transform = `translateX(${-(i-1)*33.33333}%)`
             }
-            
         });
     });
+
+    function nextElement(element) {
+        if (element.nextElementSibling) {
+            return element.nextElementSibling;
+        }
+        return carouselWrapper.firstElementChild;
+    }
+
+    function prevElement(element) {
+        if (element.previousElementSibling) {
+            return element.previousElementSibling;
+        }
+        return carouselWrapper.lastElementChild;
+    }
+
+    function nextImage() {
+        const curImage = document.querySelector('.center');
+        curImage.classList.remove('center');
+
+        // get next element and make that the center
+        const nextImage = nextElement(curImage);
+        nextImage.classList.add('center');
+
+        let i = 0;
+        let child = nextImage
+        while ((child = child.previousElementSibling) !== null)  {
+            i++;
+        }
+
+        // shift content over
+        if (window.innerWidth < 768) {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*60-40}%)`
+        }
+        else if (window.innerWidth < 1080) {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*50-25}%)`
+        }
+        else {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*33.33333}%)`
+        }
+    }
+
+    function prevImage() {
+        const curImage = document.querySelector('.center');
+        curImage.classList.remove('center');
+
+        // get next element and make that the center
+        const prevImage = prevElement(curImage);
+        prevImage.classList.add('center');
+
+        let i = 0;
+        let child = prevImage
+        while ((child = child.previousElementSibling) !== null)  {
+            i++;
+        }
+
+        // shift content over
+        if (window.innerWidth < 768) {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*60-40}%)`
+        }
+        else if (window.innerWidth < 1080) {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*50-25}%)`
+        }
+        else {
+            carouselWrapper.style.transform = `translateX(${-(i-1)*33.33333}%)`
+        }
+    }
+
+    carousel.addEventListener("touchstart", startTouch, false);
+    carousel.addEventListener("touchmove", moveTouch, false);
+
+    // Swipe Up / Down / Left / Right
+    let initialX = null;
+    let initialY = null;
+
+    function startTouch(e) {
+        initialX = e.touches[0].clientX;
+        initialY = e.touches[0].clientY;
+    };
+
+    function moveTouch(e) {
+        if (initialX === null) {
+            return;
+        }
+
+        if (initialY === null) {
+            return;
+        }
+
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+
+        const diffX = initialX - currentX;
+        const diffY = initialY - currentY;
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            // sliding horizontally
+            if (diffX > 0) {
+            // swiped left
+                nextImage();
+            } else {
+                // swiped right
+                prevImage();
+            }
+        }
+
+        initialX = null;
+        initialY = null;
+        
+        e.preventDefault();
+    };
 });
