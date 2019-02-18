@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function(){
     emailForm.addEventListener('submit', function(e) {
         if (required.value && !required.classList.contains('mce_inline_error')) {
             // we good
+            // fb track lead
+            fbq('track', 'Lead');
         }
         else {
             // focus on element
