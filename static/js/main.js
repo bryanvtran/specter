@@ -92,14 +92,14 @@ document.addEventListener('DOMContentLoaded', function(){
         if (element.nextElementSibling) {
             return element.nextElementSibling;
         }
-        return null;
+        return carouselWrapper.firstElementChild;
     }
 
     function prevElement(element) {
         if (element.previousElementSibling) {
             return element.previousElementSibling;
         }
-        return null;
+        return carouselWrapper.lastElementChild;
     }
 
     function nextImage() {
