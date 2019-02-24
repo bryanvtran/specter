@@ -3,6 +3,11 @@
     padding: $base-padding;
     margin: 0 auto;
 
+    &.container--center {
+        text-align: center;
+        align-items: flex-start;
+    }
+
     &.container--extra-pad {
         padding: 180px $base-padding;
 

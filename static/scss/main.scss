@@ -270,3 +270,23 @@
         margin-bottom: $margin-bottom-mobile;
     }
 }
+
+.feature {
+    @media (max-width: $mobile-width) {
+        margin-bottom: $spacing-xl !important;
+    }
+
+    .feature__image {
+        margin-bottom: 1em;
+    }
+
+    .feature__title {
+        font-size: 1.3em;
+        margin-bottom: 6px;
+    }
+
+    .feature__description {
+        font-size: 1.1em;
+        margin-top: 0;
+    }
+}
