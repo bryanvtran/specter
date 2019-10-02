@@ -1,11 +1,10 @@
 .container {
     max-width: $container-width;
-    padding: $base-padding;
+    padding: $container-padding;
     margin: 0 auto;
 
-    &.container--center {
-        text-align: center;
-        align-items: flex-start;
+    @media (max-width: $mobile-width) {
+        padding: $base-padding;
     }
 
     &.container--extra-pad {
@@ -50,6 +49,11 @@
 .container-grid {
     display: flex;
     align-items: center;
+
+    &.container--center {
+        text-align: center;
+        align-items: flex-start;
+    }
 
     .container-grid__col {
         flex: 1;
