@@ -1,3 +1,81 @@
+.landing-hero {
+    display: flex;
+    align-items: center;
+    margin-bottom: $margin-bottom;
+
+    @media (max-width: $tablet-width) {
+        flex-direction: column-reverse;
+    }
+    
+    .landing-hero__half {
+        flex: 1;
+
+        &.left {
+            padding-right: $base-padding;
+            
+            @media (max-width: $tablet-width) {
+                padding: 0;
+            }
+        }
+
+        &.right {
+            padding-left: $base-padding; 
+
+            @media (max-width: $tablet-width) {
+                padding: 0;
+                margin-bottom: 48px;
+            }
+        }
+
+    }
+
+    .landing-hero__title {
+        font-size: 65px;
+        font-weight: 300;
+        margin: 0 0 20px 0;
+
+        @media (max-width: 1140px) {
+            font-size: 48px;
+        }
+
+        @media (max-width: 800px) {
+            font-size: 36px;
+        }
+    }
+
+    .landing-hero__subtitle {
+        font-size: 20px;
+        margin: 0 0 20px 0;
+    }
+}
+
+.intro {
+    text-align: center;
+    max-width: 750px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: $margin-bottom;
+
+    .intro__logo {
+        width: 40px;
+        margin-bottom: 26px;
+    }
+
+    .intro__title {
+        font-size: 32px;
+        margin: 0 0 20px 0;
+    }
+
+    .intro__body {
+        font-size: 24px;
+        margin: 0;
+
+        @media (max-width: $tablet-width) {
+            font-size: 20px;
+        }
+    }
+}
+
 .landing-header {
     padding: 25vh $base-padding;
     text-align: center;
@@ -86,7 +164,7 @@
 .centered-content {
     margin-bottom: $margin-bottom;
     text-align: center;
-    max-width: 650px;
+    max-width: 750px;
 
     .centered-content__title {
         font-size: 2em;
@@ -104,10 +182,6 @@
         @media (max-width: $mobile-width) {
             margin-bottom: $margin-bottom-mobile; 
         }
-    }
-
-    @media (max-width: $mobile-width) {
-        margin-bottom: $margin-bottom-mobile; 
     }
 }
 
@@ -271,6 +345,16 @@
     }
 }
 
+.features {
+    margin-bottom: $margin-bottom;
+    
+    .features__title {
+        font-size: 2em;
+        font-weight: 300;
+        margin-bottom: 24px;
+    }
+}
+
 .feature {
     @media (max-width: $mobile-width) {
         margin-bottom: $spacing-xl !important;
@@ -283,10 +367,34 @@
     .feature__title {
         font-size: 1.3em;
         margin-bottom: 6px;
+        margin-top: 6px;
     }
 
     .feature__description {
         font-size: 1.1em;
         margin-top: 0;
+    }
+}
+
+.design {
+    margin-bottom: $margin-bottom;
+
+    .design__img {
+        margin-bottom: 32px;
+    }
+
+    .design__content {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .design__title {
+        font-size: 1.8em;
+        margin: 0 0 12px 0;
+    }
+
+    .design__body {
+        font-size: 1.2em;
+        margin: 0;
     }
 }
