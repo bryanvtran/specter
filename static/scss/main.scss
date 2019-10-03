@@ -426,10 +426,10 @@
 .kickstarter {
     display: flex;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: $margin-bottom;
 
     @media (max-width: $mobile-width) {
-        margin-bottom: 50px;
+        margin-bottom: $margin-bottom-mobile;
     }
 
     @media (max-width: $tablet-width) {
@@ -474,9 +474,9 @@
     height: 1px;
     margin: 0;
 
-    margin-bottom: 100px;
+    margin-bottom: $margin-bottom;
 
     @media (max-width: $mobile-width) {
-        margin-bottom: 50px;
+        margin-bottom: $margin-bottom-mobile;
     }
 }
