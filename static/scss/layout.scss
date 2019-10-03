@@ -78,11 +78,6 @@
     }
 }
 
-footer {
-    text-align: center;
-    color: $black-light;
-
-    p {
-        margin: 0;
-    }
+.container-margin-bottom {
+    margin-bottom: $margin-bottom;
 }
