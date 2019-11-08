@@ -1,8 +1,8 @@
 body {
-    color: $black;
-    font-family: $font-family;
-    font-weight: $regular;
-    font-size: $base-font-size;
+  color: $black;
+  font-family: $font-family;
+  font-weight: $regular;
+  font-size: $base-font-size;
 }
 
 h1,
@@ -11,80 +11,85 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: $bold;
+  font-weight: $bold;
 }
 
 p {
-    font-weight: $regular;
-    line-height: 1.5;
+  font-weight: $regular;
+  line-height: 1.5;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 .btn {
-    border: 1px solid $black;
-    padding: $spacing-sm $base-padding;
-    color: $white;
-    text-decoration: none;
-    background: $black;
-    transition: all 0.2s ease 0s;
-    display: inline-block;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 0;
+  border: 1px solid $black;
+  padding: $spacing-sm $base-padding;
+  color: $white;
+  text-decoration: none;
+  background: $black;
+  transition: all 0.2s ease 0s;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 0;
 
-    &:focus {
-        outline: none;
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: $black-medium;
+    border-color: $black-medium;
+  }
+
+  &:disabled {
+    background: $black-light;
+    border-color: $black-light;
+  }
+
+  &.btn--arrow {
+    padding-right: 42px;
+    position: relative;
+
+    &:after {
+      content: '';
+      background-image: url(../img/chevron-right.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: calc(50% - 0.4em);
+      width: 0.8em;
+      height: 0.8em;
+      margin-left: 8px;
+      transition: all 0.2s ease 0s;
     }
-
-    &:hover {
-        background: $black-medium;
-        border-color: $black-medium;
+    &:hover:after {
+      transform: translateX(4px);
     }
+  }
 
-    &:disabled {
-        background: $black-light;
-        border-color: $black-light;
-    }
+  &.btn--green {
+    background: #05ce78;
+    border-color: #05ce78;
+    font-weight: 400;
+  }
 
-    &.btn--arrow {
-        padding-right: 42px;
-        position: relative;
-
-        &:after {
-            content: "";
-            background-image: url(../img/chevron-right.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: calc(50% - .4em);
-            width: .8em;
-            height: .8em;
-            margin-left: 8px;
-            transition: all 0.2s ease 0s;
-        }
-        &:hover:after {
-            transform: translateX(4px);
-        }
-
-    } 
-
-    &.btn--green {
-        background: #05ce78;
-        border-color: #05ce78;
-        font-weight: 400;
-    }
+  &.btn--pink {
+    background: #eb1478;
+    border-color: #eb1478;
+    font-weight: 400;
+  }
 }
 
 .input {
-    border: 1px solid $black;
-    padding: $spacing-sm;
-    border-radius: 0;
+  border: 1px solid $black;
+  padding: $spacing-sm;
+  border-radius: 0;
 
-    &:focus {
-        outline: none;
-        border-color: $black-medium;
-    }
+  &:focus {
+    outline: none;
+    border-color: $black-medium;
+  }
 }
